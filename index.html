@@ -1,80 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>klaus163 | Digital Nomad Portfolio</title>
+    <title>klaus163 | Secure Node</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans selection:bg-emerald-500/30">
-    <header class="min-h-[40vh] flex flex-col items-center justify-center p-6 border-b border-slate-800 bg-gradient-to-b from-slate-950 to-slate-900">
-        <div class="w-24 h-24 bg-emerald-500 rounded-full flex items-center justify-center mb-6 shadow-lg shadow-emerald-500/20">
-            <i class="fa-solid fa-user-shield text-4xl text-slate-950"></i>
+<body class="bg-[#020617] text-slate-200 font-sans min-h-screen flex flex-col">
+    <header class="py-16 flex flex-col items-center">
+        <div class="w-24 h-24 bg-emerald-500 rounded-3xl rotate-12 flex items-center justify-center mb-6 shadow-2xl shadow-emerald-500/20 border-2 border-emerald-400">
+            <i class="fa-solid fa-shield-halved text-4xl text-slate-900 -rotate-12"></i>
         </div>
-        <h1 class="text-4xl font-bold tracking-tight mb-2">klaus163</h1>
-        <p class="text-slate-400 text-lg">System Orchestrator & Privacy Advocate</p>
+        <h1 class="text-4xl font-black tracking-tighter uppercase">klaus163</h1>
+        <p class="text-emerald-500 font-mono text-xs mt-2 tracking-[0.3em]">SYSTEM ORCHESTRATOR</p>
     </header>
-    <main class="max-w-4xl mx-auto p-6 space-y-8 -mt-10">
-        <section class="bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-xl overflow-hidden relative">
-            <div class="flex items-center justify-between mb-4">
-                <h2 class="text-xl font-semibold flex items-center gap-2">
-                    <i class="fa-solid fa-network-wired text-emerald-400"></i>
-                    Network Status
-                </h2>
-                <div id="status-badge" class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest bg-slate-700 text-slate-400 animate-pulse">
-                    Checking...
+
+    <main class="flex-grow max-w-lg mx-auto w-full p-6">
+        <div class="bg-slate-900/80 border border-slate-800 rounded-[2.5rem] p-8 backdrop-blur-xl shadow-2xl">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-sm font-bold uppercase tracking-widest text-slate-400">Network Info</h2>
+                <div id="status-badge" class="h-2 w-2 rounded-full bg-amber-500 shadow-[0_0_10px_rgba(245,158,11,0.5)] animate-ping"></div>
+            </div>
+            
+            <div class="space-y-6">
+                <div>
+                    <label class="text-[10px] text-slate-500 uppercase font-bold block mb-2">Public Address</label>
+                    <div id="ip-address" class="text-2xl font-mono text-slate-100 tracking-tight">Checking...</div>
+                </div>
+                <div class="h-px bg-slate-800 w-full"></div>
+                <div>
+                    <label class="text-[10px] text-slate-500 uppercase font-bold block mb-2">Current Location</label>
+                    <div id="location" class="text-lg text-emerald-400 font-medium italic">Scanning satellites...</div>
                 </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700/50">
-                    <span class="text-xs text-slate-500 block uppercase mb-1">Public IP</span>
-                    <code id="ip-address" class="text-emerald-300 font-mono">...</code>
-                </div>
-                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700/50">
-                    <span class="text-xs text-slate-500 block uppercase mb-1">Location</span>
-                    <span id="location" class="text-emerald-300">...</span>
-                </div>
-            </div>
-        </section>
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-slate-800/50 border border-slate-800 p-6 rounded-2xl hover:border-emerald-500/50 transition-colors group">
-                <i class="fa-solid fa-code text-emerald-400 mb-4 text-2xl group-hover:scale-110 transition-transform"></i>
-                <h3 class="font-bold mb-2 text-slate-100">Xray/VLESS</h3>
-                <p class="text-sm text-slate-400 leading-relaxed font-light">Infrastructure architecture and secure tunneling protocols.</p>
-            </div>
-            <div class="bg-slate-800/50 border border-slate-800 p-6 rounded-2xl hover:border-emerald-500/50 transition-colors group">
-                <i class="fa-solid fa-terminal text-emerald-400 mb-4 text-2xl group-hover:scale-110 transition-transform"></i>
-                <h3 class="font-bold mb-2 text-slate-100">Termux Ops</h3>
-                <p class="text-sm text-slate-400 leading-relaxed font-light">Mobile environment automation and system orchestration.</p>
-            </div>
-            <div class="bg-slate-800/50 border border-slate-800 p-6 rounded-2xl hover:border-emerald-500/50 transition-colors group">
-                <i class="fa-solid fa-microchip text-emerald-400 mb-4 text-2xl group-hover:scale-110 transition-transform"></i>
-                <h3 class="font-bold mb-2 text-slate-100">P2P Legion</h3>
-                <p class="text-sm text-slate-400 leading-relaxed font-light">Advanced prompt engineering and AI multi-agent systems.</p>
-            </div>
-        </section>
+        </div>
+        
+        <button onclick="window.location.reload(true)" class="w-full mt-8 py-4 bg-slate-800 hover:bg-slate-700 rounded-2xl text-xs font-bold uppercase tracking-widest transition-all">
+            Обновить данные
+        </button>
     </main>
-    <footer class="p-10 text-center text-slate-600 text-xs border-t border-slate-800 mt-12">
-        &copy; 2026 klaus163. Deployed via Termux.
+
+    <footer class="p-8 text-center text-[10px] text-slate-600 uppercase tracking-widest">
+        Node: klaus163.github.io | v6.3 LEGION
     </footer>
+
     <script>
-        async function checkStatus() {
-            try {
-                const res = await fetch('https://ipwho.is/');
-                const data = await res.json();
-                if(!data.success) throw new Error();
-                document.getElementById('ip-address').innerText = data.ip;
-                document.getElementById('location').innerText = `${data.city}, ${data.country}`;
-                const badge = document.getElementById('status-badge');
-                badge.innerText = 'Protected';
-                badge.classList.remove('bg-slate-700', 'text-slate-400', 'animate-pulse');
-                badge.classList.add('bg-emerald-500/20', 'text-emerald-400');
-            } catch (err) {
-                document.getElementById('status-badge').innerText = 'Check Failed';
+        async function getIP() {
+            const apis = [
+                'https://ipapi.co/json/',
+                'https://ipwho.is/',
+                'https://api.ipify.org?format=json'
+            ];
+            
+            for (let api of apis) {
+                try {
+                    const res = await fetch(api);
+                    const data = await res.json();
+                    
+                    document.getElementById('ip-address').innerText = data.ip || data.query;
+                    document.getElementById('location').innerText = data.city ? `${data.city}, ${data.country || data.country_name}` : 'VPN Active (Location Hidden)';
+                    
+                    const badge = document.getElementById('status-badge');
+                    badge.classList.remove('bg-amber-500', 'animate-ping');
+                    badge.classList.add('bg-emerald-500', 'shadow-[0_0_10px_rgba(16,185,129,0.5)]');
+                    return;
+                } catch (e) { console.log('Sensor bypass...'); }
             }
+            document.getElementById('status-badge').innerText = 'Sensor Fail';
         }
-        checkStatus();
+        getIP();
     </script>
 </body>
 </html>
